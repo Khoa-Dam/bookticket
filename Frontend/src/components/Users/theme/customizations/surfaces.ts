@@ -9,7 +9,7 @@ export const surfacesCustomizations: Components<Theme> = {
       disableGutters: true,
     },
     styleOverrides: {
-      root: ({ theme }) => ({
+      root: ({ }) => ({
         padding: 4,
         overflow: "clip",
         // backgroundColor: (theme.vars || theme).palette.background.default,

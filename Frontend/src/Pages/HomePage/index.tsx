@@ -5,14 +5,12 @@ import { FaPlaneDeparture, FaPlaneArrival } from "react-icons/fa";
 import Icon from '../../components/Homepage/icon';
 import AirportInput from "../../components/Homepage/AirportInput";
 import DatePickerComponent from "../../components/Homepage/DatePicker";
-import { flyList } from "../../Types/airports";
 
 const links = [
     { name: 'Đặt vé', href: '' },
     { name: 'Gửi hành lý', href: '' },
 ];
 
-const now = new Date();
 const startOfToday = new Date();
 startOfToday.setHours(0, 0, 0, 0);
 
@@ -49,9 +47,7 @@ export default function HomePage() {
         }
     };
 
-    const isAirportValid = (airportCode: string): boolean => {
-        return flyList.some((airport: { code: string }) => airport.code === airportCode);
-    };
+
 
     const checkInputs = (): boolean => {
         if (!searchDeparture) {

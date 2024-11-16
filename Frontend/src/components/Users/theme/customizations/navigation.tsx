@@ -124,7 +124,7 @@ export const navigationCustomizations: Components<Theme> = {
       underline: "none",
     },
     styleOverrides: {
-      root: ({ theme }) => ({
+      root: ({ }) => ({
         // color: (theme.vars || theme).palette.text.primary,
         fontWeight: 500,
         position: "relative",
@@ -154,7 +154,7 @@ export const navigationCustomizations: Components<Theme> = {
   },
   MuiDrawer: {
     styleOverrides: {
-      paper: ({ theme }) => ({
+      paper: ({ }) => ({
         // backgroundColor: (theme.vars || theme).palette.background.default,
       }),
     },
@@ -221,7 +221,7 @@ export const navigationCustomizations: Components<Theme> = {
   },
   MuiStepConnector: {
     styleOverrides: {
-      line: ({ theme }) => ({
+      line: ({ }) => ({
         borderTop: "1px solid",
         // borderColor: (theme.vars || theme).palette.divider,
         flex: 1,

@@ -22,7 +22,7 @@ export const feedbackCustomizations: Components<Theme> = {
   },
   MuiDialog: {
     styleOverrides: {
-      root: ({ theme }) => ({
+      root: ({ }) => ({
         "& .MuiDialog-paper": {
           borderRadius: "10px",
           border: "1px solid",

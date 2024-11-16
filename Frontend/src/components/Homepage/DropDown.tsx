@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 import { PiAirplaneTiltFill } from "react-icons/pi";
 import { flyList } from '../../Types/airports'; // Nhập dữ liệu sân bay
 

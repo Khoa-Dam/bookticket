@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { addMonths, format } from "date-fns";
+import { addMonths } from "date-fns";
 import { AiOutlineCalendar } from "react-icons/ai";
 
 
