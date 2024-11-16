@@ -11,6 +11,6 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "skipLibCheck": true,
-    // ... other options ...
+    "noUnusedLocals": false,
   }
 }
