@@ -4,7 +4,7 @@ import FlightCard from './FlyCard'; // Adjust the import path if necessary
 interface FlightListProps {
     loading: boolean;
     error: string | null;
-    flights: Array<{ airline: string; price: string; time: string }>;
+    flights: Array<{ id?: number; airline: string; price: string; time: string }>;
     departure: string;
     destination: string;
     departureDate: string;
@@ -26,6 +26,7 @@ const FlightList: React.FC<FlightListProps> = ({ loading, error, flights, depart
                             airline={flight.airline}
                             price={flight.price}
                             time={flight.time}
+                            id={flight.id}
                             departureDate={departureDate}
                         />
                     </div>

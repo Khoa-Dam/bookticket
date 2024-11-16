@@ -81,17 +81,18 @@ export default function FlightBookingForm() {
         setForminfor(prev => ({ ...prev, [name]: value }))
     }
     const location = useLocation();
-    const { departure, destination, airline, price, time, departureDate } = location.state || {};
+    const { departure, destination, airline, price, time, departureDate, id } = location.state || {};
 
     const navigate = useNavigate()
 
 
     const handleSubmit = () => {
+        console.log("formContact, forminfor", formContact, forminfor);
         validateContact().then(contactValid => {
             if (contactValid) {
                 validateInfort().then(infortValid => {
                     if (infortValid)
-                        navigate('/Payment', { state: { departure, destination, airline, price, time, departureDate, formContact, forminfor } })
+                        navigate('/Payment', { state: { departure, destination, airline, price, time, departureDate, id, formContact, forminfor } })
                 })
             }
         })

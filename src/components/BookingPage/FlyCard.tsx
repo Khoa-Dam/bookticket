@@ -13,6 +13,7 @@ interface FlightCardProps {
     departure: string;
     destination: string;
     departureDate: string;
+    id?: number;
 }
 const tabs: Tab[] = [
     { id: 'details', label: 'Chi tiết' },
@@ -22,7 +23,7 @@ const tabs: Tab[] = [
     { id: 'promotions', label: 'Khuyến mãi' }
 ]
 
-const FlightCard: React.FC<FlightCardProps> = ({ departure, destination, airline, price, time, departureDate }) => {
+const FlightCard: React.FC<FlightCardProps> = ({ departure, destination, airline, price, time, departureDate, id }) => {
     const [activeTab, setActiveTab] = useState<string>('details')
     const navigate = useNavigate();
 
@@ -36,7 +37,8 @@ const FlightCard: React.FC<FlightCardProps> = ({ departure, destination, airline
                 airline,
                 price,
                 time,
-                departureDate
+                departureDate,
+                id
             }
         });
     }

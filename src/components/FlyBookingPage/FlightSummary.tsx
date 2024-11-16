@@ -45,10 +45,10 @@ const FlightSummary: React.FC<FlightSummaryProps> = ({ departure, destination, a
                 </div>
                 <div className="flex flex-wrap gap-2">
                     <span className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">
-                        Có áp DụNg đổi Lịch Bay
+                        Có áp dụng đổi lịch bay
                     </span>
                     <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">
-                        Có Thể HoàN Vé
+                        Có thể hoàn vé
                     </span>
                 </div>
                 <div className="border-t pt-4 mt-4">

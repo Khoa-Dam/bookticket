@@ -26,4 +26,8 @@ const getAllFlights = () => {
     return axiosInstance.get('flights');
 
 }
-export { getAllFlights };
+
+const postBookingFlight = (data: any) => {
+    return axiosInstance.post('booking-flight', data);
+};
+export { getAllFlights, postBookingFlight };
