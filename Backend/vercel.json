@@ -3,11 +3,10 @@
     "routes": [
         {
             "src": "Backend/server.js",
-            "dest": "/flights"
-        },
-        {
-            "src": "Backend/server.js",
-            "dest": "/booking-flight"
+            "dest": "Backend/router/api.js"
         }
-    ]
+    ],
+    "functions": {
+        "flights": "Backend/controllers/flightController.js"
+    }
 }
