@@ -1,43 +1,15 @@
 {
-    "version": 3,
+    "version": 2,
     "builds": [
         {
-            "src": "package.json",
+            "src": "Backend/server.js",
             "use": "@vercel/node"
         }
     ],
     "routes": [
         {
-            "src": "/(.*)",
-            "dest": "/server.js"
+            "src": "/api/(.*)",
+            "dest": "Backend/server.js"
         }
-    ],
-    "functions": {
-        "api/(.*)": {
-            "runtime": "nodejs18.x"
-        }
-    },
-    "env": {
-        "DATABASE_URL": "jdbc:mysql://localhost:3306/bookflight",
-        "NODE_ENV": "development",
-        "HOST_NAME": "localhost",
-        "DB_HOST": "localhost",
-        "DB_PORT": "3306",
-        "DB_USER": "root",
-        "DB_PASSWORD": "sa0Andsa0",
-        "DB_NAME": "bookflight"
-    },
-    "build": {
-        "env": {
-            "NODE_ENV": "production"
-        }
-    },
-    "dev": {
-        "env": {
-            "NODE_ENV": "development"
-        }
-    },
-    "github": {
-        "silent": true
-    }
+    ]
 }
