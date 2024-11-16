@@ -40,7 +40,7 @@ const FlightSummary: React.FC<FlightSummaryProps> = ({
                     <div>
                         <p className="font-medium">{departure}</p>
                         <p className="text-sm text-gray-500">{time.split("-")[0]}</p>
-                        <p className="text-sm text-gray-500">{departureDate.toString()}</p>
+                        <p className="text-sm text-gray-500">{departureDate.toLocaleDateString('vi-VN').toString()}</p>
                     </div>
                     <div className="text-center">
                         <p className="text-sm text-gray-500">1h 55m</p>
@@ -54,7 +54,7 @@ const FlightSummary: React.FC<FlightSummaryProps> = ({
                     <div className="text-right">
                         <p className="font-medium">{destination}</p>
                         <p className="text-sm text-gray-500">{time.split("-")[1]}</p>
-                        <p className="text-sm text-gray-500">{departureDate.toString()}</p>
+                        <p className="text-sm text-gray-500">{departureDate.toLocaleDateString('vi-VN').toString()}</p>
                     </div>
                 </div>
 

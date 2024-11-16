@@ -1,62 +1,87 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { PiAirplaneLight } from "react-icons/pi";
-import { MdAccountCircle } from "react-icons/md";
+import { MdAccountCircle, MdMenu, MdClose } from "react-icons/md";
 
-export default function Header() {
-  const [navbarOpen, setNavbarOpen] = React.useState(false);
+const Header: React.FC = () => {
+  const [navbarOpen, setNavbarOpen] = useState(false);
+
   return (
-    <>
-      <nav className="relative bg-gray-100">
-        <div className=" max-w-7xl px-18 lg:px-8 container flex flex-wrap items-center justify-between text-[#1c89e3] pt-5">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8 relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start w-2">
-            <Link
-              className="flex text-sm text-center font-bold leading-relaxed py-2 whitespace-nowrap uppercase font-serif"
-              to="/"
-            >
-              <PiAirplaneLight className="h-7 w-7 mr-2" />  AirFlight
-            </Link>
-
-          </div>
-          <div
-            className={
-              "lg:flex flex-grow items-center" +
-              (navbarOpen ? " flex" : " hidden")
-            }
-            id="example-navbar-danger"
+    <nav className="relative bg-gray-100 border-b-2 border-[#1c89e3]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between py-4">
+          <Link
+            className="flex items-center text-sm font-bold uppercase text-[#1c89e3]"
+            to="/"
           >
-            <ul className="flex justify-center items-center flex-col lg:flex-row list-none lg:ml-auto center">
-              <li className="nav-item">
-                <Link
-                  className="px-2 py-1.5 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75 border-2 rounded-md border-blue-200 mr-2"
-                  to="/Support"
-                >
-                  Hỗ trợ
-                </Link>
-              </li>
+            <PiAirplaneLight className="mr-2 h-7 w-7" />
+            <span className="font-serif">AirFlight</span>
+          </Link>
 
-              <li className="nav-item">
-                <Link
-                  className="px-2 py-1.5 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75 border-2 rounded-md border-blue-200 "
-                  to="/SignUp"
-                >
-                  <MdAccountCircle className="mr-2 " />
-                  Đăng kí
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className="px-2 py-1.5 before:content-['|'] flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75 "
-                  to="/SignIn"
-                >
-                  Đăng nhập
-                </Link>
-              </li>
+          <div className="hidden lg:flex items-center space-x-4">
+            <Link
+              className="px-3 py-2 text-xs font-bold uppercase leading-snug text-[#1c89e3] hover:opacity-75 border-2 rounded-md border-blue-200"
+              to="/Support"
+            >
+              Hỗ trợ
+            </Link>
+            <Link
+              className="flex items-center px-3 py-2 text-xs font-bold uppercase leading-snug text-[#1c89e3] hover:opacity-75 border-2 rounded-md border-blue-200"
+              to="/SignUp"
+            >
+              <MdAccountCircle className="mr-2" />
+              Đăng kí
+            </Link>
+            <Link
+              className="px-3 py-2 text-xs font-bold uppercase leading-snug text-[#1c89e3] hover:opacity-75"
+              to="/SignIn"
+            >
+              Đăng nhập
+            </Link>
+          </div>
 
-            </ul>
+          <button
+            className="lg:hidden text-[#1c89e3] focus:outline-none"
+            onClick={() => setNavbarOpen(!navbarOpen)}
+          >
+            {navbarOpen ? (
+              <MdClose className="h-6 w-6" />
+            ) : (
+              <MdMenu className="h-6 w-6" />
+            )}
+          </button>
+        </div>
+
+        {/* Mobile menu */}
+        <div
+          className={`lg:hidden ${navbarOpen ? "block" : "hidden"
+            } pb-4`}
+        >
+          <div className="flex flex-col space-y-2">
+            <Link
+              className="px-3 py-2 text-xs font-bold uppercase text-[#1c89e3] hover:opacity-75 border-2 rounded-md border-blue-200"
+              to="/Support"
+            >
+              Hỗ trợ
+            </Link>
+            <Link
+              className="flex items-center px-3 py-2 text-xs font-bold uppercase text-[#1c89e3] hover:opacity-75 border-2 rounded-md border-blue-200"
+              to="/SignUp"
+            >
+              <MdAccountCircle className="mr-2" />
+              Đăng kí
+            </Link>
+            <Link
+              className="px-3 py-2 text-xs font-bold uppercase text-[#1c89e3] hover:opacity-75"
+              to="/SignIn"
+            >
+              Đăng nhập
+            </Link>
           </div>
         </div>
-      </nav>
-    </>
+      </div>
+    </nav>
   );
-}
+};
+
+export default Header;

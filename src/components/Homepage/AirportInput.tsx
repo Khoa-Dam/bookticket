@@ -27,12 +27,12 @@ const AirportInput = ({
     icon: Icon
 }: AirportInputProps) => {
     return (
-        <div className='grid grid-row-2 gap-1'>
+        <div className='grid sm:grid-row-2 gap-1'>
             <label className='text-sm font-semibold text-gray-600'>{label}</label>
             <div className='relative'>
-                <Icon className='absolute top-1 -left-2' />
+                <Icon className='sm:absolute sm:top-1 sm:-left-2 hidden' />
                 <input
-                    className="border-b-2 border-gray-500 pl-4 focus:outline-none"
+                    className="border-b-2 border-gray-500 pl-4 focus:outline-none sm:w-full w-32"
                     type='text'
                     placeholder={placeholder}
                     onFocus={onFocus}

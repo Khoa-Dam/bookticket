@@ -12,7 +12,7 @@ interface FlightSummaryProps {
 
 const FlightSummary: React.FC<FlightSummaryProps> = ({ departure, destination, airline, price, time, departureDate }) => {
     return (
-        <div className="fixed bg-white p-6 rounded-lg shadow-md right-24 max-w-lg">
+        <div className="sm:fixed bg-white p-6 rounded-lg shadow-md sm:right-24 sm:max-w-lg ml-5">
             <div className="flex justify-between items-center mb-6">
                 <h2 className="text-xl font-semibold">Tóm tắt chuyến bay</h2>
                 <button className="text-blue-500 hover:underline">Chi tiết</button>

@@ -1,8 +1,8 @@
 import React from 'react';
 import { FaFacebookF, FaInstagram, FaYoutube, FaTiktok, FaTelegram } from 'react-icons/fa';
-import airplane from '../../assets/logo.png';
-import googlePlay from '../../assets/google.svg';
-import appStore from '../../assets/appStore.svg';
+import airplane from '../assets/logo.png';
+import googlePlay from '../assets/google.svg';
+import appStore from '../assets/appStore.svg';
 
 const Footer: React.FC = () => {
     return (

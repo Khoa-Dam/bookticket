@@ -42,7 +42,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ formData, handleInputChange, 
                         error={errors.firstName}
                     />
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
                     <div>
                         <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
                             Điện thoại di động<span className="text-red-500">*</span>
@@ -62,7 +62,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ formData, handleInputChange, 
                                 name="phone"
                                 value={formData.phone}
                                 onChange={handleInputChange}
-                                className="flex-1 px-3 py-2 border border-gray-300 rounded-r-md focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                className="flex-1 sm:px-3 sm:py-2 p-0 border border-gray-300 rounded-r-md focus:outline-none focus:ring-1 focus:ring-blue-500"
                                 required
                             />
                         </div>

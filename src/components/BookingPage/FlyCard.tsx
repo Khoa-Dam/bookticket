@@ -68,7 +68,7 @@ const FlightCard: React.FC<FlightCardProps> = ({ departure, destination, airline
                 </div>
 
                 {/* Navigation Tabs */}
-                <div className="flex space-x-1">
+                <div className="sm:flex grid grid-cols-5 space-x-1">
                     {tabs.map((tab) => (
                         <button
                             key={tab.id}

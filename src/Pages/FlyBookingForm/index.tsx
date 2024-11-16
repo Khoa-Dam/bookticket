@@ -100,17 +100,17 @@ export default function FlightBookingForm() {
 
 
     return (
-        <div className="container mx-auto p-4 bg-gray-100">
+        <div className="container mx-auto p-4 ">
             <div className="grid gap-6 md:grid-cols-3">
                 {/* Contact Information Form */}
                 <div className="col-span-2">
-                    <div className="bg-white  p-6 rounded-lg shadow-md ml-20 w-3/4">
+                    <div className="bg-white p-6 rounded-lg shadow-md sm:ml-20 ml-12 w-3/4">
                         <ContactForm
                             formData={formContact}
                             handleInputChange={handleInputChange}
                             errors={errorsContact} />
                     </div>
-                    <div className="bg-white mt-7 p-6 rounded-lg shadow-md ml-20 w-3/4">
+                    <div className="bg-white mt-7 p-6 rounded-lg shadow-md sm:ml-20 ml-10 w-3/4">
                         <PassengerInfo
                             forminfor={forminfor}
                             handleInputInfor={handleInputInfor}
@@ -130,7 +130,7 @@ export default function FlightBookingForm() {
                 />
             </div>
             <button
-                className="group flex m-auto items-center mt-8 justify-center gap-2 rounded-full bg-[#FF4D00] px-6 py-3 text-white transition-all hover:bg-[#e64600] focus:outline-none focus:ring-2 focus:ring-[#FF4D00] focus:ring-offset-2 "
+                className="group flex m-auto z-50items-center mt-8 justify-center gap-2 rounded-full bg-[#FF4D00] px-6 py-3 text-white transition-all hover:bg-[#e64600] focus:outline-none focus:ring-2 focus:ring-[#FF4D00] focus:ring-offset-2 "
                 type="button"
                 aria-label="Tiếp tục đến phần thanh toán"
                 onClick={handleSubmit}

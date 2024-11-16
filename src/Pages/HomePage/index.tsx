@@ -115,14 +115,14 @@ export default function HomePage() {
     }, [searchDeparture, searchDestination, departureDate]);
 
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-full bg-white">
             <main className="relative isolate overflow-hidden py-24 sm:py-20 w-full min-h-screen flex flex-col md:flex-row">
                 <video autoPlay muted loop className='absolute w-screen h-95 object-cover opacity-3 top-0 left-0 bottom-0 right-0 '>
                     <source src={videoHomepage} type="video/mp4" />
                 </video>
-                <div className="absolute ml-44 mt-12 max-w-full px-6 lg:px-8 flex-col items-center justify-center">
+                <div className="sm:absolute sm:ml-44 sm:mt-12 sm:max-w-full sm:px-6 lg:px-8 sm:flex-col sm:items-center sm:justify-center relative z-10 px-4 flex flex-col items-center justify-center">
                     <div className='relative'>
-                        <div className="max-w-2xl lg:mx-0  ">
+                        <div className="max-w-2xl lg:mx-0">
                             <h2 className="text-base font-bold tracking-tight text-white sm:text-3xl ">BOOK YOUR FLIGHT</h2>
                             <p className="mt-3 text-lg leading-5 text-white">Đưa bạn đến bất cứ đâu</p>
                         </div>
@@ -135,9 +135,9 @@ export default function HomePage() {
                                 ))}
                             </div>
                         </div>
-                        <form className='relative px-8 py-8 bg-white-color rounded-xl grid grid-cols-3 gap-4' >
-                            <div className='col-span-2 flex justify-center space-x-5'>
-                                <div className='flex justify-center'>
+                        <form className='relative px-8 py-8 bg-white-color rounded-xl grid grid-cols-1 md:grid-cols-3 gap-4' >
+                            <div className='col-span-2 flex flex-col md:flex-row justify-center space-x-5'>
+                                <div className='flex  justify-center w-full'>
                                     <AirportInput
                                         label="Đi từ"
                                         placeholder="Nhập vào điểm đi"
@@ -175,7 +175,7 @@ export default function HomePage() {
                                 />
 
                             </div>
-                            <div className="relative w-full left-60">
+                            <div className="relative w-full md:left-60 justify-center">
                                 <button
                                     onClick={handleSearchClick}
                                     className=" mt-4 px-4 py-2 bg-[#fc615c] text-white font-semibold rounded-lg hover:bg-[#e0440e] transition duration-200"
@@ -185,8 +185,7 @@ export default function HomePage() {
                                 {/* Modal hiển thị thông báo lỗi */}
                                 {showError && (
                                     <div className="fixed inset-0 flex items-center justify-center z-50">
-                                        <div className="bg-black bg-opacity-50 fixed inset-0"></div>
-                                        <div className="bg-white p-8 rounded-lg shadow-lg relative z-10 max-w-md mx-auto">
+                                        <div className="bg-white p-8 rounded-lg shadow-lg relative z-10 sm:max-w-md sm:mx-auto max-w-sm mx-4 mt-0">
                                             <h2 className="text-lg font-bold mb-4">Lỗi</h2>
                                             <p className="text-gray-700 mb-4">Vui lòng kiểm tra các trường nhập liệu.</p>
                                             <button

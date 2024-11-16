@@ -72,7 +72,7 @@ const BookingPage = () => {
           <TimeSlotSelector title="Giờ cất cánh" timeSlots={timeSlots} />
 
 
-          <TimeSlotSelector title="Giờ cất cánh" timeSlots={timeSlots} />
+          <TimeSlotSelector title="Giờ hạ cánh" timeSlots={timeSlots} />
         </div>
 
         <div className="w-3/4 ml-4">
