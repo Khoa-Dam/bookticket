@@ -3,8 +3,7 @@ const connection = require("./config/database");
 const PORT = 3000; // Đặt port cho backend
 const router = require("./router/api");
 
-app.use('/', router);
-
+app.use('/api', router);
 (async () => {
     try {
         await connection.getConnection(); // Kiểm tra kết nối
