@@ -54,7 +54,7 @@ const AirportDropdown = ({ value, onSelect }: { value: string, onSelect: (value:
     };
 
     return (
-        <div className="absolute flex-col w-[500px] mt-1 h-max bg-white border rounded shadow-lg text-black font-medium">
+        <div className="absolute flex-col w-[500px] mt-1 h-max bg-white border rounded shadow-lg text-black font-medium z-10">
             <div className='p-2 border-b-2'> Thành phố hoặc sân bay phổ biến</div>
             <ul className="min-w-min z-10 w-full max-h-64 overflow-y-auto">
                 {filteredAirports.map((airport) => (

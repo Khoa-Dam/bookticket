@@ -30,7 +30,7 @@ const AirportInput = ({
         <div className='grid sm:grid-row-2 gap-1'>
             <label className='text-sm font-semibold text-gray-600'>{label}</label>
             <div className='relative'>
-                <Icon className='sm:absolute sm:top-1 sm:-left-2 hidden' />
+                <Icon className='sm:absolute sm:top-1 sm:-left-2' />
                 <input
                     className="border-b-2 border-gray-500 pl-4 focus:outline-none sm:w-full w-32"
                     type='text'

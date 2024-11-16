@@ -3,6 +3,7 @@ import { FaFacebookF, FaInstagram, FaYoutube, FaTiktok, FaTelegram } from 'react
 import airplane from '../assets/logo.png';
 import googlePlay from '../assets/google.svg';
 import appStore from '../assets/appStore.svg';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
     return (
@@ -27,7 +28,9 @@ const Footer: React.FC = () => {
                         <ul className="space-y-2">
                             <li><a href="#" className="hover:text-gray-300">Cách đặt chỗ</a></li>
                             <li><a href="#" className="hover:text-gray-300">Liên hệ chúng tôi</a></li>
-                            <li><a href="#" className="hover:text-gray-300">Trợ giúp</a></li>
+                            <li>
+                                <Link to="/Support" className="hover:text-gray-300">Trợ giúp</Link>
+                            </li>
                             <li><a href="#" className="hover:text-gray-300">Tuyển dụng</a></li>
                             <li><a href="#" className="hover:text-gray-300">Về chúng tôi</a></li>
                         </ul>

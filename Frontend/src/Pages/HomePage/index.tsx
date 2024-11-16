@@ -5,9 +5,10 @@ import { FaPlaneDeparture, FaPlaneArrival } from "react-icons/fa";
 import Icon from '../../components/Homepage/icon';
 import AirportInput from "../../components/Homepage/AirportInput";
 import DatePickerComponent from "../../components/Homepage/DatePicker";
+import { flyList } from "../../Types/airports";
 
 const links = [
-    { name: 'Đặt vé', href: '/bookingPage' },
+    { name: 'Đặt vé', href: '' },
     { name: 'Gửi hành lý', href: '' },
 ];
 
@@ -46,6 +47,10 @@ export default function HomePage() {
             setSearchDestination(selectedAirport);
             setShowDestinationDropdown(false); // Ẩn dropdown sau khi chọn
         }
+    };
+
+    const isAirportValid = (airportCode: string): boolean => {
+        return flyList.some((airport: { code: string }) => airport.code === airportCode);
     };
 
     const checkInputs = (): boolean => {
@@ -185,12 +190,13 @@ export default function HomePage() {
                                 {/* Modal hiển thị thông báo lỗi */}
                                 {showError && (
                                     <div className="fixed inset-0 flex items-center justify-center z-50">
+                                        <div className="bg-black bg-opacity-50 fixed inset-0"></div> {/* Mờ xung quanh */}
                                         <div className="bg-white p-8 rounded-lg shadow-lg relative z-10 sm:max-w-md sm:mx-auto max-w-sm mx-4 mt-0">
                                             <h2 className="text-lg font-bold mb-4">Lỗi</h2>
                                             <p className="text-gray-700 mb-4">Vui lòng kiểm tra các trường nhập liệu.</p>
                                             <button
                                                 onClick={() => setShowError(false)} // Đóng modal khi nhấn nút
-                                                className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition"
+                                                className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition "
                                             >
                                                 Đóng
                                             </button>
