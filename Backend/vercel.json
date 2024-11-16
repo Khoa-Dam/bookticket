@@ -3,7 +3,11 @@
     "routes": [
         {
             "src": "Backend/server.js",
-            "dest": "/api/flights"
+            "dest": "/flights"
+        },
+        {
+            "src": "Backend/server.js",
+            "dest": "/booking-flight"
         }
     ]
 }
