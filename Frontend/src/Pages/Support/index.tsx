@@ -14,7 +14,7 @@ const popularTopics: PopularTopic[] = [
     { id: 5, title: 'Cách huỷ phòng và hoàn tiền cho đặt phòng khách sạn' },
     { id: 6, title: 'Cách đổi lịch đặt phòng khách sạn của tôi' },
     { id: 7, title: 'Cách làm thủ tục trực tuyến' },
-    { id: 8, title: 'Lời hứa hoàn lại tiền trên Traveloka' },
+
 ];
 
 const productCategories = [
