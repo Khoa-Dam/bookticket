@@ -21,8 +21,8 @@ endOfToday.setSeconds(endOfToday.getSeconds() - 1);
 
 
 export default function HomePage() {
-    const [departure, setDeparture] = React.useState<string>("HCM (SGN)");
-    const [destination, setDestination] = React.useState<string>("Hà Nội (HAN");
+    const [departure, setDeparture] = React.useState<string>("Hồ Chí Minh");
+    const [destination, setDestination] = React.useState<string>("Hà Nội");
     const [showDepartureDropdown, setShowDepartureDropdown] = React.useState<boolean>(false);
     const [showDestinationDropdown, setShowDestinationDropdown] = React.useState<boolean>(false);
     const [searchDeparture, setSearchDeparture] = React.useState<string>("HCM (SGN)");

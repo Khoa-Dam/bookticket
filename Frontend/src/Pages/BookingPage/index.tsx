@@ -86,7 +86,7 @@ const BookingPage = () => {
                 <FaPlane className="w-8 h-8 text-blue-500" />
               </div>
             </div>
-            <FlyData />
+            <FlyData departureDate={departureDate} />
           </div>
           <h2 className="text-lg font-semibold mt-4">Best flights from your search</h2>
           <FlightList loading={loading} error={error} flights={flights as flights[]} departure={departure} destination={destination} departureDate={departureDate} />
