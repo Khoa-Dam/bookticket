@@ -1,4 +1,5 @@
 const db = require("../config/database");
+const axios = require("axios");
 
 const getAllFlights = async (req, res) => {
     const [rows] = await db.query("SELECT * FROM flight");
@@ -28,11 +29,9 @@ const ensureTableExists = async () => {
 
 const postBookingFlight = async (req, res) => {
     try {
-        console.log("Check body:", req.body);
         await ensureTableExists();
 
         const { code, firstName, lastName, email, phone, departureDate, departure, destination, price } = req.body;
-        console.log(req.body);
         console.log("Missing fields:", { code, firstName, lastName, email, phone, departureDate, departure, destination, price });
         if (!code || !firstName || !lastName || !email || !phone || !departureDate || !departure || !destination || !price) {
             return res.status(400).json({
@@ -62,4 +61,38 @@ const postBookingFlight = async (req, res) => {
     }
 };
 
-module.exports = { getAllFlights, postBookingFlight };
+const postCodeQR = async (req, res) => {
+    const { name, sdt, price } = req.body;
+
+    const clientId = process.env.CLIENT_ID;
+    const apiKey = process.env.API_KEY;
+
+    const url = "https://api.vietqr.io/v2/generate";
+
+    const headers = {
+        'x-client-id': clientId,
+        'x-api-key': apiKey,
+        'Content-Type': 'application/json',
+    };
+
+
+    const data = {
+        accountNo: "4910205057729",
+        accountName: "KHOA DAM",
+        acqId: "970405",
+        addInfo: `${name} - ${sdt}: Chuyển khoản cho máy bay của Khoa Đàm`,
+        addInfo: "KHOA DAM",
+        amount: `${price}`,
+        amount: "100000",
+        template: "compact"
+    };
+    try {
+        const response = await axios.post(url, data, { headers });
+        res.json(response.data);
+    } catch (error) {
+        console.error('Error:', error.message);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+}
+
+module.exports = { getAllFlights, postBookingFlight, postCodeQR };
