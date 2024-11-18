@@ -21,11 +21,11 @@ endOfToday.setSeconds(endOfToday.getSeconds() - 1);
 
 
 export default function HomePage() {
-    const [departure, setDeparture] = React.useState<string>("Hồ Chí Minh");
-    const [destination, setDestination] = React.useState<string>("Hà Nội");
+    const [departure, setDeparture] = React.useState<string>("Hồ Chí Minh (SGN)");
+    const [destination, setDestination] = React.useState<string>("Hà Nội (HAN)");
     const [showDepartureDropdown, setShowDepartureDropdown] = React.useState<boolean>(false);
     const [showDestinationDropdown, setShowDestinationDropdown] = React.useState<boolean>(false);
-    const [searchDeparture, setSearchDeparture] = React.useState<string>("HCM (SGN)");
+    const [searchDeparture, setSearchDeparture] = React.useState<string>("Hồ Chí Minh (SGN)");
     const [searchDestination, setSearchDestination] = React.useState<string>("Hà Nội (HAN)");
     const [errorMessagedep, setErrorMessagedep] = React.useState<string>("");
     const [errorMessagedis, setErrorMessagedis] = React.useState<string>("");
@@ -54,21 +54,24 @@ export default function HomePage() {
             setErrorMessagedep("Vui lòng chọn điểm cất cánh.");
             return false;
         }
-        if (!searchDestination) {
-            setErrorMessagedis("Vui lòng chọn điểm hạ cánh.");
-            return false;
-        }
         if (searchDeparture === searchDestination) {
             setErrorMessagedep("Departure và Destination không thể giống nhau!");
             return false;
         }
+        setErrorMessagedep("");
+
+        if (!searchDestination) {
+            setErrorMessagedis("Vui lòng chọn điểm hạ cánh.");
+            return false;
+        }
+        setErrorMessagedis("");
+
+
         if (!departureDate) {
             setErrorMessagedate("Vui lòng chọn ngày cất cánh.");
             return false;
         }
 
-        setErrorMessagedep("");
-        setErrorMessagedis("");
         setErrorMessagedate("");
         return true;
     };
@@ -103,6 +106,7 @@ export default function HomePage() {
     };
 
     const handleSearchClick = (event: any) => {
+
         event.preventDefault();
         if (checkInputs()) {
             handleExpandedSearch();
