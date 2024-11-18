@@ -1,9 +1,9 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const flightData = (departureDate: Date) => [
-    { date: departureDate, price: "1,834,000 VND" }, // Current date
-    { date: new Date(departureDate.getTime() + 1 * 24 * 60 * 60 * 1000), price: "1,689,446 VND" }, // Current date + 1 day
-    { date: new Date(departureDate.getTime() + 2 * 24 * 60 * 60 * 1000), price: "2,182,000 VND" }, // Current date + 2 days
+    { date: departureDate, price: "1,834,000 VND" },
+    { date: new Date(departureDate.getTime() + 1 * 24 * 60 * 60 * 1000), price: "1,689,446 VND" },
+    { date: new Date(departureDate.getTime() + 2 * 24 * 60 * 60 * 1000), price: "2,182,000 VND" },
 ];
 
 

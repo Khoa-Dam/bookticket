@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface AirlineSelectorProps {
-    airlines: string[]; // Array of airline names
+    airlines: string[];
 }
 
 const AirlineSelector: React.FC<AirlineSelectorProps> = ({ airlines }) => {

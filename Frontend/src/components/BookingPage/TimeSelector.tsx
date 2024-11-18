@@ -1,8 +1,8 @@
 import React from 'react';
 
 interface TimeSlotSelectorProps {
-    title: string; // Title for the time slot section
-    timeSlots: string[]; // Array of time slots
+    title: string;
+    timeSlots: string[];
 }
 
 const TimeSlotSelector: React.FC<TimeSlotSelectorProps> = ({ title, timeSlots }) => {

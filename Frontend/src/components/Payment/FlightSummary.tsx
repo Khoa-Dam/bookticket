@@ -1,5 +1,5 @@
 import React from 'react';
-import { Plane, Check, Shield } from 'lucide-react'; // Thay thế bằng thư viện icon bạn đang sử dụng
+import { Plane, Check, Shield } from 'lucide-react';
 
 interface FlightSummaryProps {
     id: string;

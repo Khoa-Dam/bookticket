@@ -7,7 +7,7 @@ interface FlightSummaryProps {
     airline: string;
     price: string;
     time: string;
-    departureDate: string; // Ensure this is a string
+    departureDate: string;
 }
 
 const FlightSummary: React.FC<FlightSummaryProps> = ({ departure, destination, airline, price, time, departureDate }) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import FlightCard from './FlyCard'; // Adjust the import path if necessary
+import FlightCard from './FlyCard';
 
 interface FlightListProps {
     loading: boolean;

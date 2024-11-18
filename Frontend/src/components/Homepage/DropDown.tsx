@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { PiAirplaneTiltFill } from "react-icons/pi";
-import { flyList } from '../../Types/airports'; // Nhập dữ liệu sân bay
+import { flyList } from '../../Types/airports';
 
 const AirportDropdown = ({ value, onSelect }: { value: string, onSelect: (value: string) => void }) => {
     const normalizeString = (str: string): string => {

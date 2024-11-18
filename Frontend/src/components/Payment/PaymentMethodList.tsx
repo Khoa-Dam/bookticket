@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { PaymentMethod } from '../../Pages/Payment/PaymentMethod';
-
-// import QRcode from '../../assets/QRcode.jpg';
-// import { getQRCode } from '../../services/apiService';
-import axios from 'axios';
 import { postCodeQR } from '../../services/apiService';
 
 interface PaymentMethodList {
