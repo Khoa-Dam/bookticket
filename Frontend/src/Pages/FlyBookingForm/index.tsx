@@ -100,45 +100,47 @@ export default function FlightBookingForm() {
 
 
     return (
-        <div className="container mx-auto p-4 ">
-            <div className="grid gap-6 md:grid-cols-3">
-                {/* Contact Information Form */}
-                <div className="col-span-2">
-                    <div className="bg-white p-6 rounded-lg shadow-md sm:ml-20 ml-12 w-3/4">
-                        <ContactForm
-                            formData={formContact}
-                            handleInputChange={handleInputChange}
-                            errors={errorsContact} />
+        <div className="bg-[#f8f9fa]">
+            <div className="container mx-auto p-4 ">
+                <div className="grid gap-6 md:grid-cols-3">
+                    {/* Contact Information Form */}
+                    <div className="col-span-2">
+                        <div className="bg-white p-6 rounded-lg shadow-md sm:ml-20 ml-12 w-3/4">
+                            <ContactForm
+                                formData={formContact}
+                                handleInputChange={handleInputChange}
+                                errors={errorsContact} />
+                        </div>
+                        <div className="bg-white mt-7 p-6 rounded-lg shadow-md sm:ml-20 ml-10 w-3/4">
+                            <PassengerInfo
+                                forminfor={forminfor}
+                                handleInputInfor={handleInputInfor}
+                                errors={errorsInfor}
+                            />
+                        </div>
                     </div>
-                    <div className="bg-white mt-7 p-6 rounded-lg shadow-md sm:ml-20 ml-10 w-3/4">
-                        <PassengerInfo
-                            forminfor={forminfor}
-                            handleInputInfor={handleInputInfor}
-                            errors={errorsInfor}
-                        />
-                    </div>
+
+                    {/* Flight Summary */}
+                    <FlightSummary
+                        departure={departure}
+                        destination={destination}
+                        airline={airline}
+                        price={price}
+                        time={time}
+                        departureDate={departureDate}
+                    />
                 </div>
+                <button
+                    className="group flex m-auto z-50items-center mt-8 justify-center gap-2 rounded-full bg-[#FF4D00] px-6 py-3 text-white transition-all hover:bg-[#e64600] focus:outline-none focus:ring-2 focus:ring-[#FF4D00] focus:ring-offset-2 "
+                    type="button"
+                    aria-label="Tiếp tục đến phần thanh toán"
+                    onClick={handleSubmit}
+                >
+                    <span className="text-base font-medium">Tiếp tục đến phần thanh toán</span>
+                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
+                </button>
 
-                {/* Flight Summary */}
-                <FlightSummary
-                    departure={departure}
-                    destination={destination}
-                    airline={airline}
-                    price={price}
-                    time={time}
-                    departureDate={departureDate}
-                />
             </div>
-            <button
-                className="group flex m-auto z-50items-center mt-8 justify-center gap-2 rounded-full bg-[#FF4D00] px-6 py-3 text-white transition-all hover:bg-[#e64600] focus:outline-none focus:ring-2 focus:ring-[#FF4D00] focus:ring-offset-2 "
-                type="button"
-                aria-label="Tiếp tục đến phần thanh toán"
-                onClick={handleSubmit}
-            >
-                <span className="text-base font-medium">Tiếp tục đến phần thanh toán</span>
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
-            </button>
-
         </div>
     )
 }

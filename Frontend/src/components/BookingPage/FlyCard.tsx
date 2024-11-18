@@ -50,9 +50,7 @@ const FlightCard: React.FC<FlightCardProps> = ({ departure, destination, airline
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <span className="font-medium">{airline}</span>
-                        <div className="flex items-center justify-center rounded-full bg-gray-100 h-7 w-7">
-                            <span className="text-sm">20</span>
-                        </div>
+                        <span className="text-sm text-gray-500">Mã chuyến bay: {id}</span>
                     </div>
                     <div className="text-right">
                         <span className="text-lg font-bold text-orange-500">{price}</span>

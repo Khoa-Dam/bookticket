@@ -59,7 +59,7 @@ export default function PaymentMethods() {
     }, [messageRef]);
 
     return (
-        <div className="bg-gray-100 ">
+        <div className="bg-[#f8f9fa]">
             <div className="max-w-6xl max-h-full bg-white mx-auto p-4 grid grid-cols-1 lg:grid-cols-3 gap-6 h-full">
                 <div className="lg:col-span-2">
                     <h2 className="text-xl font-semibold mb-6">Bạn muốn thanh toán thế nào?</h2>
@@ -106,6 +106,7 @@ export default function PaymentMethods() {
                     airline={airline}
                     price={price}
                     forminfor={forminfor}
+                    formContact={formContact}
                 />
             </div>
 
@@ -124,6 +125,7 @@ export default function PaymentMethods() {
                         airline={airline}
                         price={"Đã thanh toán thành công"}
                         forminfor={forminfor}
+                        formContact={formContact}
                     />
                 </div>
             )}

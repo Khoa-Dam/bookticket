@@ -120,7 +120,7 @@ export default function HomePage() {
     }, [searchDeparture, searchDestination, departureDate]);
 
     return (
-        <div className="min-h-full bg-white">
+        <div className="min-h-full">
             <main className="relative isolate overflow-hidden py-24 sm:py-20 w-full min-h-screen flex flex-col md:flex-row">
                 <video autoPlay muted loop className='absolute w-screen h-95 object-cover opacity-3 top-0 left-0 bottom-0 right-0 '>
                     <source src={videoHomepage} type="video/mp4" />

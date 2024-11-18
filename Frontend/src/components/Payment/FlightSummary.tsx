@@ -13,6 +13,11 @@ interface FlightSummaryProps {
         firstName: string;
         lastName: string;
     };
+    formContact: {
+        email: string;
+        phone: string;
+        country: string;
+    };
 }
 
 const FlightSummary: React.FC<FlightSummaryProps> = ({
@@ -24,6 +29,7 @@ const FlightSummary: React.FC<FlightSummaryProps> = ({
     airline,
     price,
     forminfor,
+    formContact
 }) => {
     return (
         <div className="bg-blue-50 p-4 rounded-lg">
@@ -75,9 +81,12 @@ const FlightSummary: React.FC<FlightSummaryProps> = ({
                 </div>
 
                 <div className="border-t pt-4">
-                    <p className="font-medium">Chi tiết về (các) hành khách</p>
-                    <div className="flex items-center space-x-2 mt-2">
-                        <span className="text-sm">Mr {forminfor.lastName} {forminfor.firstName} (Người Lớn)</span>
+                    <p className="font-medium">Chi tiết về hành khách</p>
+                    <div className="flex flex-col mt-2">
+                        <span className="text-sm"> Họ tên: {forminfor.lastName} {forminfor.firstName}</span>
+                        <span className="text-sm">Số điện thoại: {formContact.phone}</span>
+                        <span className="text-sm">Email: {formContact.email}</span>
+
                     </div>
                 </div>
 
