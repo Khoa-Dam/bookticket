@@ -15,7 +15,6 @@ const FlightSummary: React.FC<FlightSummaryProps> = ({ departure, destination, a
         <div className="sm:fixed bg-white p-6 rounded-lg shadow-md sm:right-24 sm:max-w-lg ml-5">
             <div className="flex justify-between items-center mb-6">
                 <h2 className="text-xl font-semibold">Tóm tắt chuyến bay</h2>
-                <button className="text-blue-500 hover:underline">Chi tiết</button>
             </div>
             <div className="space-y-4">
                 <div className="flex justify-between items-center">
@@ -54,7 +53,7 @@ const FlightSummary: React.FC<FlightSummaryProps> = ({ departure, destination, a
                 <div className="border-t pt-4 mt-4">
                     <div className="flex justify-between items-center">
                         <span className="font-medium">Giá bán trả</span>
-                        <span className="text-2xl font-bold text-orange-500">{price}</span>
+                        <span className="text-2xl font-bold text-orange-500">{parseInt(price).toLocaleString()} VNĐ</span>
                     </div>
                 </div>
             </div>

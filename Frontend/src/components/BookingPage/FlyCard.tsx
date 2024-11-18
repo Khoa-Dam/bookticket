@@ -53,7 +53,7 @@ const FlightCard: React.FC<FlightCardProps> = ({ departure, destination, airline
                         <span className="text-sm text-gray-500">Mã chuyến bay: {id}</span>
                     </div>
                     <div className="text-right">
-                        <span className="text-lg font-bold text-orange-500">{price}</span>
+                        <span className="text-lg font-bold text-orange-500">{parseInt(price).toLocaleString()} VNĐ</span>
                         <span className="text-sm text-gray-500 block">/khách</span>
                     </div>
                 </div>

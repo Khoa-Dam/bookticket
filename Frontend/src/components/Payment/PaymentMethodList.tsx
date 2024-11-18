@@ -24,17 +24,34 @@ interface PaymentMethodListProps {
 const PaymentMethodList: React.FC<PaymentMethodListProps> = ({ paymentMethodsList, selectedMethod, setSelectedMethod, dataQR }) => {
     const [qrCodeUrl, setQrCodeUrl] = useState<any>("");
     useEffect(() => {
-        const QRCode = async () => {
-            const url = `https://api.viqr.net/Momo/?sdt=${dataQR.sdt}&name=${dataQR.name}&mm=50000&banks=MoMo`;
+        const generateQRCode = async () => {
+            const url = 'https://api.vietqr.io/v2/generate';
+            const headers = {
+                'x-client-id': 'fd695264-589c-4c84-9221-b1d889a0ae17',
+                'x-api-key': 'a0f9a529-9af7-4e47-892b-326a099c34f0',
+                'Content-Type': 'application/json',
+            };
 
-            axios.get(url).then((res) => {
-                console.log(res);
-                setQrCodeUrl(res.data);
-            }).catch((err) => {
-                console.log(err);
-            });
-        }
-        QRCode();
+            const data = {
+                accountNo: "4910205057729",
+                accountName: "KHOA DAM",
+                acqId: "970405",
+                addInfo: `${dataQR.name} - ${dataQR.sdt}: Chuyển khoản cho máy bay của Khoa Đàm`,
+                amount: `${dataQR.price}`,
+                template: "compact"
+            };
+
+            try {
+                const response = await axios.post(url, data, { headers });
+                console.log(response.data);
+                setQrCodeUrl(response.data); // Giả sử response.data chứa URL QR code
+                console.log(qrCodeUrl.data.qrDataURL);
+            } catch (err) {
+                console.error('Error calling API:', err);
+            }
+        };
+
+        generateQRCode();
     }, []);
 
     return (
@@ -67,7 +84,7 @@ const PaymentMethodList: React.FC<PaymentMethodListProps> = ({ paymentMethodsLis
                             <div className="flex justify-center"
 
                             >
-                                {qrCodeUrl}
+                                <img src={qrCodeUrl.data.qrDataURL} alt="QRcode" className="h-80" />
                             </div>
                         </div>
                     )}

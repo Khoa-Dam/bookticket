@@ -27,7 +27,7 @@ export default function PaymentMethods() {
             departureDate: departureDate.toISOString().split('T')[0],
             departure: departure,
             destination: destination,
-            price: price
+            price: parseInt(price).toLocaleString() + " VNĐ"
         };
         try {
             const response = await postBookingFlight(data);
@@ -90,7 +90,7 @@ export default function PaymentMethods() {
                             dataQR={{
                                 sdt: formContact.phone,
                                 name: forminfor.firstName + forminfor.lastName,
-                                mm: price,
+                                price: price,
                                 banks: "MoMo"
                             }}
                         />
