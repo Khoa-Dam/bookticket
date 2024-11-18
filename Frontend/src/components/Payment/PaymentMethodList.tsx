@@ -25,7 +25,7 @@ const PaymentMethodList: React.FC<PaymentMethodListProps> = ({ paymentMethodsLis
     const [qrCodeUrl, setQrCodeUrl] = useState<any>("");
     useEffect(() => {
         const QRCode = async () => {
-            const url = `https://api.viqr.net/Momo/?sdt=${dataQR.phone}&name=${dataQR.name}&mm=${dataQR.amount}&banks=MoMo`;
+            const url = `https://api.viqr.net/Momo/?sdt=${dataQR.sdt}&name=${dataQR.name}&mm=50000&banks=MoMo`;
 
             axios.get(url).then((res) => {
                 console.log(res);
