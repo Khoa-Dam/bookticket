@@ -10,7 +10,8 @@ import { postBookingFlight } from '../../services/apiService'
 
 export default function PaymentMethods() {
     const [selectedMethod, setSelectedMethod] = useState<PaymentMethod>('digital-wallet')
-    const [successMessage, setSuccessMessage] = useState<string>(''); // State cho thông báo thành công
+    const [successMessage, setSuccessMessage] = useState<string>('');
+    const [loading, setLoading] = useState<boolean>(false);
     const location = useLocation();
     const navigate = useNavigate();
     const { departure, destination, airline, price, time, departureDate, id, formContact, forminfor } = location.state || {};
@@ -30,13 +31,14 @@ export default function PaymentMethods() {
             price: parseInt(price).toLocaleString() + " VNĐ"
         };
         try {
+            setLoading(true);
             const response = await postBookingFlight(data);
             console.log('Success:', response.data);
             setSuccessMessage('Đặt vé thành công!');
-
-
         } catch (error) {
             console.error('Error:', error);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -51,18 +53,13 @@ export default function PaymentMethods() {
             }
         };
 
-        // Thêm sự kiện click
         document.addEventListener('mousedown', handleClickOutside);
         return () => {
-            // Xóa sự kiện khi component unmount
             document.removeEventListener('mousedown', handleClickOutside);
         };
 
 
     }, [messageRef]);
-
-
-
 
     return (
         <div className="bg-[#f8f9fa]">
@@ -88,10 +85,9 @@ export default function PaymentMethods() {
                             selectedMethod={selectedMethod}
                             setSelectedMethod={setSelectedMethod}
                             dataQR={{
-                                sdt: formContact.phone,
                                 name: forminfor.firstName + forminfor.lastName,
-                                price: price,
-                                banks: "MoMo"
+                                sdt: formContact.phone,
+                                price: price
                             }}
                         />
                         {selectedMethod !== 'vietqr' && (
@@ -102,7 +98,9 @@ export default function PaymentMethods() {
                                 onClick={handleSubmit}
                             >
                                 <span className="text-base font-medium">Thanh Toán</span>
-
+                                {loading && (
+                                    <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-white"></div>
+                                )}
                             </button>
                         )}
                     </div>

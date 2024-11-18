@@ -39,10 +39,8 @@ const BookingPage = () => {
     const fetchFlights = async () => {
       try {
         const response = await getAllFlights();
-        console.log("check response.data", response);
         setFlights(response.data as flights[]);
-        console.log("check flights", flights);
-        console.log("check flights", flights?.length);
+
       } catch (error: any) {
         setError(error.message);
       } finally {

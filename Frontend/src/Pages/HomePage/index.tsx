@@ -39,11 +39,11 @@ export default function HomePage() {
         if (type === "departure") {
             setDeparture(selectedAirport);
             setSearchDeparture(selectedAirport);
-            setShowDepartureDropdown(false); // Ẩn dropdown sau khi chọn
+            setShowDepartureDropdown(false);
         } else if (type === "destination") {
             setDestination(selectedAirport);
             setSearchDestination(selectedAirport);
-            setShowDestinationDropdown(false); // Ẩn dropdown sau khi chọn
+            setShowDestinationDropdown(false);
         }
     };
 
@@ -81,10 +81,10 @@ export default function HomePage() {
 
         if (type === "departure") {
             setSearchDeparture(value);
-            setShowDepartureDropdown(true); // Hiện dropdown khi có giá trị
+            setShowDepartureDropdown(true);
         } else if (type === "destination") {
             setSearchDestination(value);
-            setShowDestinationDropdown(true); // Hiện dropdown khi có giá trị
+            setShowDestinationDropdown(true);
         }
         checkInputs();
     };
@@ -100,8 +100,6 @@ export default function HomePage() {
     };
 
     const handleExpandedSearch = () => {
-        // Lưu thông tin đã chọn và chuyển sang trang tìm kiếm mở rộng
-        console.log("Tìm kiếm mở rộng", { departureDate, departure, destination });
         navigate("/BookingPage", { state: { departureDate, departure, destination } });
     };
 
@@ -111,11 +109,10 @@ export default function HomePage() {
         if (checkInputs()) {
             handleExpandedSearch();
         } else {
-            setShowError(true); // Hiển thị thông báo lỗi
+            setShowError(true);
         }
     };
     useEffect(() => {
-        // Check inputs based on selected departure and destination
         checkInputs();
     }, [searchDeparture, searchDestination, departureDate]);
 

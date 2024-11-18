@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import ContactForm from '../../components/FlyBookingPage/ContactForm'
-import FlightSummary from '../../components/FlyBookingPage/FlightSummary'
-import PassengerInfo from '../../components/FlyBookingPage/PassengerInfo'
+import ContactForm from '../../components/FlyBookingForm/ContactForm'
+import FlightSummary from '../../components/FlyBookingForm/FlightSummary'
+import PassengerInfo from '../../components/FlyBookingForm/PassengerInfo'
 import { ArrowRight } from 'lucide-react'
 
 type FormData = {
@@ -27,8 +27,8 @@ export default function FlightBookingForm() {
         nationality: ''
     })
 
-    const [errorsContact, setErrorsContact] = useState<{ [key: string]: string }>({}); // Trạng thái lưu trữ lỗi
-    const [errorsInfor, setErrorsInfor] = useState<{ [key: string]: string }>({}); // Trạng thái lưu trữ lỗi
+    const [errorsContact, setErrorsContact] = useState<{ [key: string]: string }>({});
+    const [errorsInfor, setErrorsInfor] = useState<{ [key: string]: string }>({});
 
     const validateContact = async () => {
         const { firstName, lastName, phone, email } = formContact;
@@ -48,8 +48,8 @@ export default function FlightBookingForm() {
         if (phone === "" || phone && !phonePattern.test(phone)) {
             formErrors.phone = "Vui lòng nhập số điện thoại hợp lệ (10 chữ số).";
         }
-        setErrorsContact(formErrors); // Cập nhật trạng thái lỗi
-        return Object.keys(formErrors).length === 0; // Trả về true nếu không có lỗi
+        setErrorsContact(formErrors);
+        return Object.keys(formErrors).length === 0;
     }
 
     const validateInfort = async () => {
@@ -64,7 +64,7 @@ export default function FlightBookingForm() {
         if (!nationality) {
             formErrors.nationality = "Vui lòng nhập quốc tịch.";
         }
-        setErrorsInfor(formErrors); // Cập nhật trạng thái lỗi
+        setErrorsInfor(formErrors);
         return Object.keys(formErrors).length === 0;
     }
 
@@ -87,7 +87,6 @@ export default function FlightBookingForm() {
 
 
     const handleSubmit = () => {
-        console.log("formContact, forminfor", formContact, forminfor);
         validateContact().then(contactValid => {
             if (contactValid) {
                 validateInfort().then(infortValid => {

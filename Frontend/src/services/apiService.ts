@@ -31,5 +31,8 @@ const postBookingFlight = (data: any) => {
     return axiosInstance.post('booking-flight', data);
 };
 
+const postCodeQR = (data: any) => {
+    return axiosInstance.post('generate-qr-code', data);
+}
 
-export { getAllFlights, postBookingFlight };
+export { getAllFlights, postBookingFlight, postCodeQR };
