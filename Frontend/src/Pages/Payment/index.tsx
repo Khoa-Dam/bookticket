@@ -41,6 +41,7 @@ export default function PaymentMethods() {
     };
 
     useEffect(() => {
+
         const handleClickOutside = (event: MouseEvent) => {
             if (messageRef.current && !messageRef.current.contains(event.target as Node)) {
                 setSuccessMessage('');
@@ -56,7 +57,12 @@ export default function PaymentMethods() {
             // Xóa sự kiện khi component unmount
             document.removeEventListener('mousedown', handleClickOutside);
         };
+
+
     }, [messageRef]);
+
+
+
 
     return (
         <div className="bg-[#f8f9fa]">
@@ -81,6 +87,12 @@ export default function PaymentMethods() {
                             paymentMethodsList={paymentMethodList as PaymentMethodList[]}
                             selectedMethod={selectedMethod}
                             setSelectedMethod={setSelectedMethod}
+                            dataQR={{
+                                sdt: formContact.phone,
+                                name: forminfor.firstName + forminfor.lastName,
+                                mm: price,
+                                banks: "MoMo"
+                            }}
                         />
                         {selectedMethod !== 'vietqr' && (
                             <button
