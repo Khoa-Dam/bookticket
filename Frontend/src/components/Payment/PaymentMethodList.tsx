@@ -72,7 +72,7 @@ const PaymentMethodList: React.FC<PaymentMethodListProps> = ({ paymentMethodsLis
                             <div className="flex justify-center"
 
                             >
-                                <img src={qrCodeUrl.qrDataURL} alt="QRcode" className="h-80" />
+                                <img src={qrCodeUrl.qrDataURL} alt="QRcode" className="h-64" />
                             </div>
                         </div>
                     )}

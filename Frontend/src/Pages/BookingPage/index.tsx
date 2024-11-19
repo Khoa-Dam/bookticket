@@ -54,7 +54,7 @@ const BookingPage = () => {
   const { departureDate, departure, destination } = location.state || {};
 
   return (
-    <div className="p-4 bg-[#f8f9fa] min-h-screen">
+    <div className="p-10 bg-[#f8f9fa] min-h-screen">
       <div className="flex">
         <div className="w-1/4 bg-white p-4 rounded-lg shadow-md">
           <h2 className="font-semibold mb-2">Hãng hàng không</h2>

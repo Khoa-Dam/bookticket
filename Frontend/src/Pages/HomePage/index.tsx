@@ -144,7 +144,7 @@ export default function HomePage() {
                                         label="Đi từ"
                                         placeholder="Nhập vào điểm đi"
                                         value={searchDeparture}
-                                        onFocus={() => setShowDepartureDropdown(true)} // Hiện dropdown khi focus
+                                        onFocus={() => setShowDepartureDropdown(true)}
                                         onBlur={() => handleBlur("departure")}
                                         onChange={(event) => onInputChange(event, "departure")}
                                         showDropdown={showDepartureDropdown}
@@ -159,7 +159,7 @@ export default function HomePage() {
                                         label="Đến"
                                         placeholder="Nhập điểm muốn đến"
                                         value={searchDestination}
-                                        onFocus={() => setShowDestinationDropdown(true)} // Hiện dropdown khi focus
+                                        onFocus={() => setShowDestinationDropdown(true)}
                                         onBlur={() => handleBlur("destination")}
                                         onChange={(event) => onInputChange(event, "destination")}
                                         showDropdown={showDestinationDropdown}
