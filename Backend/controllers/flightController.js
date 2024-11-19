@@ -83,7 +83,6 @@ const postCodeQR = async (req, res) => {
         addInfo: `${name} - ${sdt}: Chuyển khoản cho máy bay của Khoa Đàm`,
         addInfo: "KHOA DAM",
         amount: `${price}`,
-        amount: "100000",
         template: "compact"
     };
     try {

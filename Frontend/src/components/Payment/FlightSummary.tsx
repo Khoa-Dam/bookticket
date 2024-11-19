@@ -100,7 +100,7 @@ const FlightSummary: React.FC<FlightSummaryProps> = ({
             <div className="border-t pt-4 mt-4">
                 <div className="flex justify-between items-center">
                     <span className="font-medium">Giá Thanh toán</span>
-                    <span className="text-2xl font-bold text-orange-500">{parseInt(price).toLocaleString()} VNĐ</span>
+                    <span className="text-2xl ml-2 font-bold text-orange-500">{price === 'Đã thanh toán thành công' ? price : `${parseInt(price).toLocaleString()} VNĐ`} </span>
                 </div>
             </div>
         </div>
